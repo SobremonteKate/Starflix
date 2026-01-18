@@ -71,3 +71,5 @@ Admins access a dedicated dashboard with system analytics and management tools.
 ![User Dashboard](screenshots/starflix-1.png)
 ![Admin Dashboard](screenshots/admin-1.png)
 
+Built by **Kate Sobremonte** 3rd Year BS Information Systems — Full Stack Developer (PHP / JS / Web)
+
