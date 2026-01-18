@@ -1,0 +1,307 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+  
+    * {
+      font-family: "Montserrat", sans-serif;
+    }
+  
+    span {
+      color: #f4b300;
+    }
+  
+    .body {
+      justify-content: center;
+      display: flex;
+      height: 100%;
+      align-items: center;
+    }
+  
+    .header {
+      padding-bottom: 20px;
+    }
+  
+    .container {
+      background-color: #000;
+      color: #fff;
+      border-radius: 13px;
+      padding: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      flex-flow: column;
+      justify-content: center;
+    }
+  
+    .label {
+      font-weight: 600;
+      font-size: clamp(18px, 2vw, 25px);
+      justify-content: center;
+      align-items: center;
+      text-align: start;
+    }
+  
+    .pinfo {
+      font-size: clamp(18px, 2vw, 20px);
+      ;
+      font-weight: 600;
+      padding-top: 10px;
+    }
+  
+    #AdminBadge {
+      display: flex;
+      overflow: hidden;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+  
+    form {
+      display: flex;
+      flex-flow: column;
+      gap: 10px;
+    }
+  
+    form .form-row {
+      display: flex;
+      flex-flow: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+  
+    .form-row {
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+  
+    .form-group label {
+      padding-bottom: 5px;
+    }
+  
+    .btn {
+      margin-bottom: 10px;
+    }
+  
+    .form-group input {
+      border-radius: 0;
+      height: 35px;
+    }
+  
+    .buttons {
+      gap: 5px;
+    }
+  
+    .btn-warning {
+      background-color: #f4b300;
+      color: #000;
+    }
+  
+    .btns {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      align-items: center;
+      width: 100%;
+    }
+  
+    #save {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+  
+    .btns button#save {
+      width: 40%;
+      padding: 6px;
+      text-align: center;
+    }
+  
+    .btns button {
+      display: flex;
+      flex-wrap: wrap;
+      width: 55%;
+      padding: 10px;
+      border-radius: 10px;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: clamp(10px, 1vw, 13px);
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+    }
+  
+    input[type="date"]:hover,
+    select:hover {
+      cursor: pointer;
+    }
+  
+    .form-group input:focus,
+    .form-group select:focus {
+      border-color: #f4b300;
+      outline: 3px solid #f4b300;
+    }
+  
+    .passGuide {
+      font-size: clamp(13px, 1vw, 16px);
+    }
+  
+    .input-group-text {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: transparent;
+      color: #ffff;
+      flex-wrap: wrap;
+      flex-direction: row;
+      padding-top: 5px;
+      margin-bottom: -10px;
+      background-color: transparent;
+      gap: 5px;
+    }
+  
+    .input-group-text input[type="checkbox"] {
+      width: 17px;
+      height: 17px;
+    }
+  
+    @media (max-width:650px) {
+      .label {
+        text-align: center;
+        align-items: center;
+      }
+    }
+  
+    @media (max-width:769px) {
+      .container {
+        padding: 20px;
+      }
+    }
+  
+    @media (max-width:767.9px) {
+      .label {
+        display: flex;
+        text-align: center;
+      }
+  
+      .btns {
+        justify-content: center;
+      }
+  
+      .btns button {
+        width: 100%;
+      }
+    }
+  </style>
+  <div class="body">
+    <div class="container">
+      <div class="header d-flex">
+        <label class="label col">MANAGE <span>ACCOUNT</span>
+        </label>
+      </div>
+      <div class="row">
+        <!-- left side start -->
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-12 d-flex" style="justify-content: center; align-items: center; text-align: center;">
+              <img src="images/profile.png" class="adminImg" style="border-radius: 50%;">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 d-flex" id="AdminBadge">
+              <div class="containerAdBadge">
+                <i class="fa fa-circle" style="color: #7ed957; font-size: 15px; margin-right: -5px;"></i>
+                <span class="badge">Admin</span>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-5 d-flex buttons">
+            <div class="col-md-6 btns">
+              <button id="regisNewAcc" class="btn btn-warning" id="regisNewAcc">REGISTER NEW ACCOUNT</button>
+            </div>
+            <div class="col-md-6 btns">
+              <button id="switchAcc" class="btn btn-warning btn-sm" id="switchAcc">SWITCH ACCOUNT</button>
+            </div>
+          </div>
+        </div>
+        <!-- left side end -->
+        <!-- right side end -->
+        <div class="col-md-5">
+          <div class="row d-flex">
+            <label class="pinfo">PERSONAL INFORMATION</label>
+          </div>
+          <div class="row">
+            <!-- forms start-->
+            <form>
+              <div class="row form-row">
+                <div class="form-group col-md-12">
+                  <label for="fname">Account ID</label>
+                  <input type="text" class="form-control" id="accountID" placeholder="Enter Account ID">
+                </div>
+                <div class="form-group col-md-12">
+                  <label for="fname">First Name</label>
+                  <input type="text" class="form-control" id="fname" placeholder="Enter First Name">
+                </div>
+                <div class="form-group col-md-12">
+                  <label for="lname">Last Name</label>
+                  <input type="text" class="form-control" id="lname" placeholder="Enter Last Name">
+                </div>
+                <div class="form-group col-md-12">
+                  <label for="email">Email</label>
+                  <input type="email" class="form-control" id="email" placeholder="Enter Email">
+                </div>
+              </div>
+              <!-- password start -->
+              <div class="row form-row">
+                <p class="passGuide text-center mt-3"> Your password must have 8-20 characters
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label for="newPass">New Password</label>
+                    <input type="password" name="password" id="password" class="form-control password-regis" placeholder="Enter Password" required minlength="8" required="required" data-validation-length="min8" data-validation-error-msg-length="Atleast 8 characters is required" data-validation-error-msg-container="#passworderror">
+                  </div>
+                  <div id="passworderror"></div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label for="confirmPass">Confrim Password</label>
+                    <input type="password" name="confirmpassword" id="confirmpassword" class="form-control password-regis" placeholder="Confirm Password" required="required" minlength="8">
+                  </div>
+                  <div id="passworderror"></div>
+                </div>
+              </div>
+              <!-- password end -->
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="input-group-text">
+                    <input type="checkbox" id="showPassword" onclick="togglePasswordVisibility()">
+                    <label for="showPassword" class="m-0">Show Password</label>
+                  </div>
+                </div>
+              </div>
+              <div class="row mt-2">
+                <div class="col-md-6 btns" id="save">
+                  <button class="btn btn-warning" id="savebtn">save</button>
+                </div>
+              </div>
+            </form>
+            <!-- forms end -->
+          </div>
+        </div>
+        <!-- right side end -->
+      </div>
+    </div>
+  </div>
+  <script src="script/accounts.js"></script>
+  <script>
+    function togglePasswordVisibility() {
+      const passwordField = document.getElementById("password");
+      const cpasswordField = document.getElementById("confirmpassword");
+      const showPasswordCheckbox = document.getElementById("showPassword");
+      passwordField.type = showPasswordCheckbox.checked ? "text" : "password";
+      cpasswordField.type = showPasswordCheckbox.checked ? "text" : "password";
+    }
+  </script>

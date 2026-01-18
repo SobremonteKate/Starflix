@@ -1,0 +1,361 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+#btnLogin {
+width: 60%;
+padding: 7px;
+font-size: 17px;
+border-radius: 20px;
+font-family: "Montserrat", sans-serif;
+font-weight: 700;
+margin-bottom: 15px;
+}
+
+.Regis {
+    margin-top: -10px;
+    margin-bottom: -10px;
+    color: #1a1a1d;
+    font-family: "Montserrat", sans-serif;
+}
+
+.Regis a {
+    text-decoration: underline;
+}
+
+.regis-head{
+    color: #000;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: clamp(20px, 3vw, 30px);
+    text-transform: uppercase;
+    margin-top: 40px;
+}
+
+.regis-slogan {
+    color: #000;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    margin-top: -7px;
+    letter-spacing: .5px;
+}
+
+.btnRegis {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 100%;
+}
+
+.btnRegis #btnLogin {
+    background-color: #f4b300;
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-color: #f4b300;
+    width: 250px;
+    height: 40px;
+}
+
+.btnRegis #btnLogin:hover {
+background-color: #f4b300;
+color: #fff;
+border: 1px solid #f4b300;
+box-shadow: 5px 5px #1a1a1d;
+}
+
+.panel-primary {
+background: #fff;
+border-color: #1a1a1d;
+border-radius: 20px;
+/* border: 2px solid #811222; */
+color: #fff;
+margin-bottom: 7%;
+}
+
+.panel-primary>.panel-heading {
+/*background: rgba(100,100,900,.75);;*/
+/* fallback for old browsers */
+background: #1a1a1d;
+font-family: "Montserrat", sans-serif;
+border-radius: 20px 20px 0px 0px;
+font-size: 17px;
+color: #ffffff;
+border: 4px solid #1a1a1d;
+text-align: center;
+}
+
+.panel-primary>#regisPanel {
+    background: #fff;
+} 
+
+.panel-heading, #regisPanel {
+padding: 2px 2px;
+border-bottom: 1px solid transparent;
+border-top-left-radius: 5px;
+border-top-right-radius: 5px;
+align-items: center;
+justify-content: center;
+display: flex;
+flex-flow: column;
+}
+
+
+.panel-heading .sign {
+    padding-top: 5px;
+    font-size: 32px;
+}
+
+.panel-heading .slogan {
+    margin-top: -2px;
+    font-size: 14px;
+}
+
+.panel-heading1 {
+border-color: #1a1a1d;
+background: #1a1a1d;
+border-color: #1a1a1d;
+}
+
+.btn-primary,
+.btn-primary:focus,
+.btn-primary:active,
+.btnSignUp {/*background: rgba(100,100,900,.75);*/
+font-size: 12pt;
+font-family: "Montserrat", sans-serif;
+background: #f4b300;
+border-color: #f4b300;
+color: #ffffff;
+transition: .2s ease-in;
+}
+
+.btn.btn-primary:hover {
+    background-color: #f4b300;
+    color: #fff;
+    border: 1px solid #f4b300;
+    box-shadow: 5px 5px #1a1a1d;
+}
+
+.btn.btnSignUp:hover {
+background-color: #800000;
+color: white;
+border-color: #800000;
+}
+
+.btn.btn-primary1 {
+font-size: 10.5pt;
+color: #ffffff;
+background-color: #811222;
+font-family: "Montserrat", sans-serif;
+border-color: #811222;
+}
+
+.btn.btn-default1 {
+font-size: 10.5pt;
+color: #ffffff;
+background-color: #811222;
+font-family: "Montserrat", sans-serif;
+border-color: #811222;
+}
+
+.btn.btn-primary1:hover {
+font-size: 10pt;
+color: #811222;
+background-color: #ffffff;
+font-family: "Montserrat", sans-serif;
+border-color: #811222;
+font-weight: bold;
+}
+
+.btn.btn-default1:hover {
+font-size: 10pt;
+color: #811222;
+background-color: #ffffff;
+font-family: "Montserrat", sans-serif;
+border-color: #811222;
+font-weight: bold;
+}
+
+body {
+background:url(../images/bglog.png);
+min-height:  89vh;
+height: auto;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+position: relative;
+overflow: auto;
+}
+
+a {
+font-family: "Montserrat", sans-serif;
+font-style: normal;
+font-size: 10.5pt;
+color: #000;
+}
+
+a:hover {
+font-family: "Montserrat", sans-serif;
+font-style: normal;
+font-size: 10.5pt;
+color: #1a1a1d;
+}
+
+.input-group-addon {
+padding: 6px 14px;
+font-size: 25px;
+font-weight: 400;
+line-height: 1;
+color: #100f0d;
+text-align: center;
+background-color: #f4f2f2;
+border: 1px solid #f4f2f2;
+border-radius: 4px;
+}
+
+.input-group-addon .fa.fa-lock {
+    padding: 0px 1px;
+}
+
+.input-group {
+    padding: 5px 5%;
+    font-size: 0.9em;
+    border-radius: 5px;
+}
+
+.input-group-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding-top: 5px;
+    margin-bottom: -10px;
+}
+
+.input-group-text input[type="checkbox"] {
+    width: 17px; 
+    height: 17px; 
+    /* transform: scale(1.5);  */
+}
+
+
+.input-group-text label {
+    padding-left: 5px;
+    padding-top: 7px;
+    align-items: center;
+    justify-content: center;
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(12px, 3vw, 14px);
+    font-weight: 400;
+}
+
+.form-control {
+display: block;
+width: 100%;
+height: 40px;
+padding: 6px 12px;
+font-size: 14px;
+line-height: 1.42857143;
+color: #100f0d;
+background-color: #f4f2f2;
+background-image: none;
+border: 1px solid #f4f2f2;
+border-radius: 4px;
+-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+-webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+-o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+.form-control::placeholder {
+    color: #100f0d;
+}
+
+/* regis */
+.input-group.uname {
+    width: 100%;
+}
+
+#lname, #fname, #email{
+    background-color: #f4f2f2;
+    border-color: #f4f2f2;
+    border-radius: 5px;
+    box-shadow: none;
+}
+
+.password-regis{
+    background-color: #f4f2f2;
+    border-color: #f4f2f2;
+    border-radius: 5px;
+    box-shadow: none;
+}
+
+#lname::placeholder, #fname::placeholder, #email::placeholder, .password-regis::placeholder {
+    color: #100f0d;  font-weight: 300;
+}
+
+.passGuide {
+    color: #100f0d;
+    text-align: center;
+    justify-content: center;
+    width: auto;
+}
+
+#frmLogins .form-control {
+    color: #100f0d;
+}
+
+
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+.btn.btn-primary1,
+.btn.btn-default1 {
+background-color: transparent;
+border-color: transparent;
+color: #670000;
+font-weight: bold;
+}
+}
+@media only screen and (max-width: 900px) {
+.btn.btn-primary1,
+.btn.btn-default1 {
+background-color: transparent;
+border-color: transparent;color: #670000;
+font-weight: bold;
+}
+}
+.askadmin {
+color: black;
+}
+
+.container-fluid {
+    margin-top:70px;
+}
+
+@media (max-width:425px) {
+    .container-fluid {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width:768px) {
+    body {
+        min-height:  100vh;
+    }
+    @media (min-width:426px) {
+        .container-fluid {
+            margin-top: 40px;
+        }
+    }
+
+}
+
+@media (max-width:1024px) {
+    body {
+        min-height:  100vh;
+    }
+}

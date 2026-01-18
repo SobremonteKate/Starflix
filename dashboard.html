@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="public/plugins/bootstrap/js/bootstrap.min.js">
+    <link href="public/plugins/jquery/jquery-1.9.1.min.js">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.min.js"></script>
+    <!-- icons -->
+    <link href="public/plugins/font-awesome/css/lineicons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="public/plugins/font-awesome/css/font-awesome.min.css" />
+    <!-- bootstrap/css -->
+    <link rel="stylesheet" href="public/plugins/bootstrap/css/bootstrap5.min.css">
+    <link href="public/plugins/datatable/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+    <link rel="style" href="public/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link href="public/css/jquery-ui.css" rel="stylesheet" />
+    <link href="public/css/animate.min.css" rel="stylesheet" />
+    <link href="public/css/style-responsive.min.css" rel="stylesheet" />
+    <link href="public/plugins/gritter/css/jquery.gritter.css" rel="stylesheet" />
+    <link href="public/js/apps.min.js">
+    <link href="public/plugins/jquery-blockui/jquery.blockUI.js">
+    <link href="public/plugins/jquery-ui/ui/minified/jquery-ui.min.js">
+    <!-- logo icon -->
+    <link rel="icon" href="images/logo1.png">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div id="sidebar">
+        <div class="d-flex">
+          <button class="toggle-btn" type="button">
+            <img src="images/logob.png" class="logoBtn" title="sidebar menu">
+          </button>
+          <div class="sidebar-logo">
+            <a href="#">STARFLIX</a>
+          </div>
+        </div>
+        <div class="adminInfo">
+          <div class="row">
+            <div class="col-md-12" style="justify-content: center; align-items: center; text-align: center;">
+              <img src="images/profile.png" class="adminImg" style="border-radius: 50%;">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12" id="AdminBadge">
+              <div class="containerAdBadge">
+                <i class="fa fa-circle" style="color: #7ed957; font-size: 15px; margin-right: -5px;"></i>
+                <span class="badge">Admin</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- sidebar links -->
+        <ul class="sidebar-nav">
+          <li class="sidebar-item">
+            <a href="javascript:;" id="dash" class="sidebar-link" title="Dashboard">
+              <i class="fa fa-pie-chart"></i>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse" data-bs-target="#addc" aria-expanded="false" aria-controls="addc" title="Add Content">
+              <i class="fa fa-folder"></i>
+              <span>Add Content</span>
+            </a>
+            <ul id="addc" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+              <li class="sidebar-item">
+                <a href="javascript:;" id="TvShowslink" class="sidebar-link">Manage TV Show</a>
+              </li>
+              <li class="sidebar-item">
+                <a href="javascript:;" id="Serieslink" class="sidebar-link">Manage Series</a>
+              </li>
+              <li class="sidebar-item">
+                <a href="javascript:;" id="Movieslink" class="sidebar-link">Manage Movie</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar-item">
+            <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse" data-bs-target="#mauser" aria-expanded="false" aria-controls="mauser" title="Manage User">
+              <i class="fa fa-user"></i>
+              <span>Manage User</span>
+            </a>
+            <ul id="mauser" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+              <li class="sidebar-item">
+                <a href="javascript:;" id="SetupUser" class="sidebar-link">Setup User</a>
+              </li>
+              <li class="sidebar-item">
+                <a href="javascript:;" id="updateUserr" class="sidebar-link">Update User</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar-item">
+            <a href="javascript:;" id="viewRecords" class="sidebar-link" title="View Records">
+              <i class="fa fa-file"></i>
+              <span>View Records</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="javascript:;" id="account" class="sidebar-link" title="Account">
+              <i class="fa fa-gear"></i>
+              <span>Account</span>
+            </a>
+          </li>
+        </ul>
+        <div class="sidebar-footer">
+          <a href="login.html" id="logout" class="sidebar-link" title="Logout">
+            <i class="lni lni-exit"></i>
+            <span>Logout</span>
+          </a>
+        </div>
+      </div>
+      <!-- main -->
+      <div class="main p-3" id="main-content">
+        <!-- Dashboard start-->
+        <div class="text-left mt-3" style="margin-left: 20px;">
+          <h1> Welcome Back, Admin </h1>
+          <p style="margin-top: -10px; font-size: 13px;">Take a look at the updated dashboard overview</p>
+        </div>
+        <!-- cards start -->
+        <div class="row">
+          <!-- begin col-3 -->
+          <div class="col-md-4 col-sm-6">
+            <div class="widget widget-stats bg-orange">
+              <div class="stats-icon">
+                <i class="fa fa-desktop"></i>
+              </div>
+              <div class="stats-info">
+                <h5>TOTAL TV SHOWS</h5>
+                <h3 id="totalTv">Loading..</h3>
+                <br>
+              </div>
+            </div>
+            <div class="stats-link bg-dark">
+              <a href="javascript:;" id="TvShows" class="stats-content">
+                <span>See Details </span>
+                <i class="fa fa-arrow-circle-right"></i>
+              </a>
+            </div>
+          </div>
+          <!-- end col-3 -->
+          <br>
+          <!-- begin col-3 -->
+          <div class="col-md-4 col-sm-6">
+            <div class="widget widget-stats bg-cyan">
+              <div class="stats-icon">
+                <i class="fa fa-film"></i>
+              </div>
+              <div class="stats-info">
+                <h5>TOTAL SERIES</h5>
+                <h3 id="totalSeries">Loading..</h3>
+                <br>
+              </div>
+            </div>
+            <div class="stats-link bg-dark">
+              <a href="javascript:;" id="Series" class="stats-content">
+                <span>See Details </span>
+                <i class="fa fa-arrow-circle-right"></i>
+              </a>
+            </div>
+          </div>
+          <!-- end col-3 -->
+          <br>
+          <!-- begin col-3 -->
+          <div class="col-md-4 col-sm-6">
+            <div class="widget widget-stats bg-purple">
+              <div class="stats-icon">
+                <i class="fa fa-glass"></i>
+              </div>
+              <div class="stats-info">
+                <h5>TOTAL MOVIE</h5>
+                <h3 id="totalMovies">Loading..</h3>
+                <br>
+              </div>
+            </div>
+            <div class="stats-link bg-dark">
+              <a href="javascript:;" id="Movies" class="stats-content">
+                <span>See Details</span>
+                <i class="fa fa-arrow-circle-right"></i>
+              </a>
+            </div>
+          </div>
+          <!-- end col-3 -->
+        </div>
+        <!-- cards end -->
+        <!-- most viewed start-->
+        <div class="container">
+          <div class="col-md-9 most-viewed">
+            <div class="header-mv">
+              <h2>
+                <span style="color:#f4b300;">MOST</span> VIEWED
+              </h2>
+              <!-- <a href="javascript:;" class="view-more">View More..</a>  -->
+            </div>
+            <div class="movies">
+              <div class="movie">
+                <img src="images/movies/avatar.jpg" alt="Avatar">
+                <p class="movie-name">Avatar: The Way of Water</p>
+              </div>
+              <div class="movie">
+                <img src="images/movies/atlas.jpg" alt="Atlas">
+                <p class="movie-name">Atlas</p>
+              </div>
+              <div class="movie">
+                <img src="images/movies/nutcracker.jpg" alt="Nutcracker">
+                <p class="movie-name">The Nutcracker and The Four Realms</p>
+              </div>
+            </div>
+          </div>
+          <!-- most viewed end-->
+          <!-- nw release & active user start-->
+          <div class="col" style="padding: 11px;">
+            <div class="row">
+              <div class="col-md-12 new-release mt-1">
+                <div class="nwRelease">
+                  <h2>
+                    <span>NEW</span> RELEASE
+                  </h2>
+                  <!-- <a href="#">View More...</a>  -->
+                </div>
+                <div class="grid">
+                  <div class="grid-item bg-yellow"></div>
+                  <div class="grid-item bg-yellow"></div>
+                  <div class="grid-item bg-yellow"></div>
+                  <div class="grid-item bg-lt-gray"></div>
+                  <div class="grid-item bg-lt-gray"></div>
+                  <div class="grid-item bg-lt-gray"></div>
+                  <div class="grid-item bg-gray"></div>
+                  <div class="grid-item bg-gray"></div>
+                  <div class="grid-item bg-gray"></div>
+                </div>
+              </div>
+              <br>
+              <div class="col-md-12 active-user mt-3">
+                <h2>
+                  <span>ACTIVE</span> USER
+                </h2>
+                <div class="user-info">
+                  <i class="fa fa-user user-icon"></i>
+                  <p id="totalActive">Loading..</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- nw release & active user end-->
+        </div>
+        <!-- Dashboard end-->
+      </div>
+      <!-- main end-->
+    </div>
+    <!-- js -->
+    <script type="text/javascript" src="public/plugins/form-validator/jquery.form-validator.min.js"></script>
+    <script src="public/plugins/gritter/js/jquery.gritter.js"></script>
+    <script src="public/plugins/qrcode/jquery.qrcode.js"></script>
+    <script src="public/plugins/qrcode/qrcode.js"></script>
+    <script src="public/plugins/jquery-blockui/js/jquery.blockUI.js"></script>
+    <script src="public/plugins/jquery-ui/ui/minified/jquery-ui.min.js"></script>
+    <script type="text/javascript" language="javascript" src="public/plugins/datatable/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" language="javascript" src="public/plugins/datatable/js/dataTables.bootstrap.js"></script>
+    <script src="public/js/apps.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script src="script/dashboard.js"></script>
+    <script src="script/counter.js"></script>
+    <script>
+      const hamBurger = document.querySelector(".toggle-btn");
+      hamBurger.addEventListener("click", function() {
+        document.querySelector("#sidebar").classList.toggle("expand");
+      });
+      $(document).ready(function() {
+        // App.init();
+        Index.init();
+      });
+    </script>
+  </body>
+</html>

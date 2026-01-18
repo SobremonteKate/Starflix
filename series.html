@@ -1,0 +1,314 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+  
+    * {
+      font-family: "Montserrat", sans-serif;
+    }
+  
+    span {
+      color: #f4b300;
+    }
+  
+    .container {
+      background-color: #000;
+      color: #fff;
+      border-radius: 13px;
+      padding: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      flex-flow: column;
+      height: 100%;
+    }
+  
+    .lagayan {
+      padding: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      width: 100%;
+    }
+  
+    .label {
+      font-weight: 600;
+      font-size: clamp(18px, 2vw, 25px);
+      justify-content: center;
+      align-items: center;
+      text-align: start;
+      margin-right: 10px;
+    }
+  
+    .search {
+      justify-content: end;
+      align-items: center;
+      position: relative;
+      display: flex;
+      gap: 7px;
+      padding-top: 10px;
+    }
+  
+    .search .sIcon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding-bottom: 12px;
+      margin-left: 6px;
+      font-size: 18px;
+    }
+  
+    .search button {
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      border-radius: 20px;
+      height: 25px;
+      font-weight: 500;
+      display: flex;
+    }
+  
+    .search input {
+      width: 200px;
+      height: 25px;
+      border-radius: 2px;
+      padding-left: 5px;
+    }
+  
+    table {
+      border-spacing: 5px;
+      border: 2px solid #000;
+    }
+  
+    table tr td {
+      height: 40px;
+      align-items: center;
+      text-align: start;
+    }
+  
+    .table thead th {
+      background-color: #ffcc00;
+    }
+  
+    .table tbody tr:nth-child(even) {
+      background-color: #d9d9d9;
+    }
+  
+    .table tbody tr:nth-child(odd) {
+      background-color: #fff;
+    }
+  
+    form {
+      padding: 20px;
+    }
+  
+    .form-control,
+    .btn {
+      margin-bottom: 10px;
+    }
+  
+    .form-group input,
+    .form-group select {
+      border-radius: 2px;
+    }
+  
+    .btn-warning {
+      background-color: #ffcc00;
+      color: #000;
+    }
+  
+    .table-container {
+      max-height: 200px;
+      overflow-y: auto;
+      overflow-x: auto;
+    }
+  
+    .table-responsive {
+      width: 100%;
+    }
+  
+    .btns {
+      display: flex;
+      justify-content: end;
+      align-items: center;
+      text-align: center;
+      flex-direction: row;
+      gap: 10px;
+    }
+  
+    .btns button {
+      width: 100px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 13px;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .btns #add:hover,
+    .btns #update:hover {
+      background-color: #ecb92e;
+    }
+  
+    input[type="date"]:hover,
+    select:hover {
+      cursor: pointer;
+    }
+  
+    .form-group input:focus,
+    .form-group select:focus {
+      border-color: #f4b300;
+      outline: 3px solid #f4b300;
+    }
+  
+    .search input:focus {
+      border-color: #f4b300;
+      outline: 3px solid #f4b300;
+    }
+  
+    @media (max-width:434px) {
+      .search {
+        flex-wrap: wrap;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+      }
+  
+      .search input {
+        width: 100%;
+      }
+  
+      .lagayan {
+        overflow: hidden;
+      }
+    }
+  
+    @media (max-width:650px) {
+      .label {
+        text-align: center;
+        align-items: center;
+      }
+  
+      .lagayan {
+        flex-flow: column;
+      }
+    }
+  
+    @media (max-width:769px) {
+      .container {
+        padding: 20px;
+      }
+    }
+  </style>
+  <div class="container">
+    <div class="lagayan">
+      <label class="label col">MANAGE <span>SERIES</span>
+      </label>
+      <div class="col search">
+        <i class="sIcon fa fa-search"></i>
+        <input type="search" class="form-control" placeholder="Search" id="searchSeriesField">
+      </div>
+    </div>
+    <!-- table -->
+    <div class="table-container table-responsive">
+      <table class="table table-bordered" id="seriesTable">
+        <thead>
+          <tr>
+            <th>Series ID</th>
+            <th>Series Name</th>
+            <th>Genre</th>
+            <th>Final Release Date</th>
+            <th>Release Date</th>
+            <th>Episode Runtime</th>
+            <th>Status</th>
+            <th>Age Rating</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <!-- forms -->
+    <form method="POST" action="php/insertSeries.php" name="insertSeries">
+      <div class="row form-row">
+        <div class="form-group col-md-6">
+          <label for="seriesName">Series Name</label>
+          <input type="text" class="form-control" id="seriesName" placeholder="Series Name">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="genre">Genre</label>
+          <select id="genre" class="form-control selects">
+            <option disabled selected>Select Genre</option>
+            <option>Fantasy</option>
+            <option>Drama</option>
+            <option>Comedy</option>
+            <option>Action</option>
+            <option>Thriller</option>
+            <option>Romance</option>
+            <option>Sci-fi</option>
+          </select>
+        </div>
+      </div>
+      <div class="row form-row">
+        <div class="form-group col-md-4">
+          <label for="finalreleaseDate">Final Release Date</label>
+          <input type="date" class="form-control" id="finalreleaseDate" title="Enter/Select Final Release Date">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="releaseDate">Release Date</label>
+          <input type="date" class="form-control" id="releaseDate" title="Enter/Select Release Date">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="status">Status</label>
+          <select id="status" name="status" class="form-control selects">
+            <option disabled selected>Select Status</option>
+            <option>Ongoing</option>
+            <option>Completed</option>
+          </select>
+        </div>
+      </div>
+      <div class="row form-row">
+        <div class="form-group col-md-4">
+          <label for="episodeRuntime">Episode Runtime</label>
+          <input type="text" class="form-control" id="episodeRuntime" placeholder="Episode Runtime">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="ageRating">Age Rating</label>
+          <select id="ageRating" class="form-control selects">
+            <option disabled selected>Select Age Rating</option>
+            <option>All Ages</option>
+            <option>16+</option>
+            <option>18+</option>
+          </select>
+        </div>
+        <div class="form-group col-md-4">
+          <label for="seriesID">seriesID</label>
+          <input class="form-control" type="text" id="seriesID" name="seriesID" value="" placeholder="Enter seriesID">
+        </div>
+      </div>
+      <div class="row btns mt-2">
+        <button type="button" class="btn btn-warning btn-sm" id="addSeries" name="add">Add</button>
+        <button type="button" class="btn btn-warning btn-sm" id="updateSeries" name="update">Update</button>
+        <button type="button" class="btn btn-danger btn-sm" id="deleteSeries" name="delete" data-id="">Delete</button>
+      </div>
+    </form>
+  </div>
+  <script src="script/series.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('select').click(function() {
+        var select = $(this);
+        var options = select.find('option');
+        var selectedDisabledOptions = options.filter(':selected, :disabled');
+        var otherOptions = options.not(':selected, :disabled');
+        otherOptions.sort(function(a, b) {
+          if (a.text > b.text) return 1;
+          if (a.text < b.text) return -1;
+          return 0;
+        });
+        select.empty().append(selectedDisabledOptions).append(otherOptions);
+      });
+    });
+  </script>

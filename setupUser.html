@@ -1,0 +1,228 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+  
+    * {
+      font-family: "Montserrat", sans-serif;
+    }
+  
+    span {
+      color: #f4b300;
+    }
+  
+    .body {
+      justify-content: center;
+      display: flex;
+      height: 100%;
+      align-items: center;
+    }
+  
+    .header {
+      padding-bottom: 20px;
+    }
+  
+    .container {
+      background-color: #000;
+      color: #fff;
+      border-radius: 13px;
+      padding: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      flex-flow: column;
+      justify-content: center;
+    }
+  
+    .label {
+      font-weight: 600;
+      font-size: clamp(18px, 2vw, 25px);
+      justify-content: center;
+      align-items: center;
+      text-align: start;
+    }
+  
+    form {
+      display: flex;
+      flex-flow: column;
+      gap: 20px;
+    }
+  
+    form .form-row {
+      display: flex;
+      flex-flow: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+  
+    .form-row {
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      padding: 0px 15px;
+    }
+  
+    .form-group label {
+      padding-bottom: 5px;
+    }
+  
+    .form-control,
+    .btn {
+      margin-bottom: 10px;
+    }
+  
+    .form-group input,
+    .form-group select {
+      border-radius: 2px;
+    }
+  
+    .btn-warning {
+      background-color: #f4b300;
+      color: #000;
+    }
+  
+    .btns {
+      display: flex;
+      justify-content: end;
+      align-items: center;
+      align-items: center;
+      width: 100%;
+    }
+  
+    .btns button {
+      width: 100px;
+      border-radius: 10px;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 13px;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .btns #add:hover,
+    .btns #update:hover {
+      background-color: #ecb92e;
+    }
+  
+    input[type="date"]:hover,
+    select:hover {
+      cursor: pointer;
+    }
+  
+    .form-group input:focus,
+    .form-group select:focus {
+      border-color: #f4b300;
+      outline: 3px solid #f4b300;
+    }
+  
+    @media (max-width:650px) {
+      .label {
+        text-align: center;
+        align-items: center;
+      }
+    }
+  
+    @media (max-width:769px) {
+      .container {
+        padding: 20px;
+      }
+    }
+  
+    @media (max-width:767.9px) {
+      .label {
+        display: flex;
+        text-align: center;
+      }
+  
+      .btns {
+        justify-content: center;
+      }
+    }
+  </style>
+  <div class="body">
+    <div class="container">
+      <div class="header">
+        <label class="label col">SETUP <span>USER</span>
+        </label>
+      </div>
+      <!-- forms -->
+      <form>
+        <div class="row form-row">
+          <div class="form-group col-md">
+            <label for="fname">First Name</label>
+            <input type="text" class="form-control" id="firstName" placeholder="Enter First Name">
+          </div>
+          <div class="form-group col">
+            <label for="lname">Last Name</label>
+            <input type="text" class="form-control" id="lastName" placeholder="Enter Last Name">
+          </div>
+        </div>
+        <div class="row form-row">
+          <div class="form-group col-md">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="userName" placeholder="Enter Username">
+          </div>
+          <div class="form-group col-md">
+            <label for="email">Email Address</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter Email Address">
+          </div>
+        </div>
+        <br>
+        <div class="row form-row">
+          <div class="form-group col-md">
+            <label for="subscription">Subscription Plan</label>
+            <select id="subs" class="form-control selects">
+              <option disabled selected>Select Plan</option>
+              <option>Basic</option>
+              <option>Standard</option>
+              <option>Premium</option>
+            </select>
+          </div>
+          <div class="form-group col-md">
+            <label for="payMethod">Payment Method</label>
+            <select id="payment" class="form-control selects">
+              <option disabled selected>Select Payment Method</option>
+              <option>Credit Card</option>
+              <option>Debit Card</option>
+              <option>Gcash</option>
+            </select>
+          </div>
+        </div>
+        <div class="row form-row">
+          <div class="form-group col-md">
+            <label for="contact">Contact Number</label>
+            <input type="tel" class="form-control" id="contactNum" placeholder="Enter Contact Number">
+          </div>
+          <div class="form-group col-md">
+            <label for="status">Status</label>
+            <select id="status" class="form-control selects">
+              <option disabled selected>Select Status</option>
+              <option>Active</option>
+              <option>Inactive</option>
+            </select>
+          </div>
+        </div>
+        <div class="row btns mt-2">
+          <button type="submit" class="btn btn-warning btn-sm" id="userRegister">Register</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script src="script/userFunction.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('select').click(function() {
+        var select = $(this);
+        var options = select.find('option');
+        var selectedDisabledOptions = options.filter(':selected, :disabled');
+        var otherOptions = options.not(':selected, :disabled');
+        otherOptions.sort(function(a, b) {
+          if (a.text > b.text) return 1;
+          if (a.text < b.text) return -1;
+          return 0;
+        });
+        select.empty().append(selectedDisabledOptions).append(otherOptions);
+      });
+    });
+  </script>

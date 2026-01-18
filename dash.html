@@ -1,0 +1,139 @@
+<!-- Dashboard start-->
+<div class="text-left mt-3" style="margin-left: 20px;">
+    <h1> Dashboard </h1>
+    <p style="margin-top: -10px; font-size: 13px;">Take a look at the updated dashboard overview</p>
+  </div>
+  <!-- cards start -->
+  <div class="row">
+    <!-- begin col-3 -->
+    <div class="col-md-4 col-sm-6">
+      <div class="widget widget-stats bg-orange">
+        <div class="stats-icon">
+          <i class="fa fa-desktop"></i>
+        </div>
+        <div class="stats-info">
+          <h5>TOTAL TV SHOWS</h5>
+          <h3 id="totalTv">Loading..</h3>
+          <br>
+        </div>
+      </div>
+      <div class="stats-link bg-dark">
+        <a href="javascript:;" id="TvShows" class="stats-content">
+          <span>See Details </span>
+          <i class="fa fa-arrow-circle-right"></i>
+        </a>
+      </div>
+    </div>
+    <!-- end col-3 -->
+    <br>
+    <!-- begin col-3 -->
+    <div class="col-md-4 col-sm-6">
+      <div class="widget widget-stats bg-cyan">
+        <div class="stats-icon">
+          <i class="fa fa-film"></i>
+        </div>
+        <div class="stats-info">
+          <h5>TOTAL SERIES</h5>
+          <h3 id="totalSeries">Loading..</h3>
+          <br>
+        </div>
+      </div>
+      <div class="stats-link bg-dark">
+        <a href="javascript:;" id="Series" class="stats-content">
+          <span>See Details </span>
+          <i class="fa fa-arrow-circle-right"></i>
+        </a>
+      </div>
+    </div>
+    <!-- end col-3 -->
+    <br>
+    <!-- begin col-3 -->
+    <div class="col-md-4 col-sm-6">
+      <div class="widget widget-stats bg-purple">
+        <div class="stats-icon">
+          <i class="fa fa-glass"></i>
+        </div>
+        <div class="stats-info">
+          <h5>TOTAL MOVIE</h5>
+          <h3 id="totalMovies">Loading..</h3>
+          <br>
+        </div>
+      </div>
+      <div class="stats-link bg-dark">
+        <a href="javascript:;" id="Movies" class="stats-content">
+          <span>See Details</span>
+          <i class="fa fa-arrow-circle-right"></i>
+        </a>
+      </div>
+    </div>
+    <!-- end col-3 -->
+  </div>
+  <!-- cards end -->
+  <!-- most viewed start-->
+  <div class="container">
+    <div class="col-md-9 most-viewed">
+      <div class="header-mv">
+        <h2>
+          <span style="color:#f4b300;">MOST</span> VIEWED
+        </h2>
+        <!-- <a href="javascript:;" id="#" class="view-more">View More..</a>  -->
+      </div>
+      <div class="movies">
+        <div class="movie">
+          <img src="images/movies/avatar.jpg" alt="Avatar">
+          <p class="movie-name">Avatar: The Way of Water</p>
+        </div>
+        <div class="movie">
+          <img src="images/movies/atlas.jpg" alt="Atlas">
+          <p class="movie-name">Atlas</p>
+        </div>
+        <div class="movie">
+          <img src="images/movies/nutcracker.jpg" alt="Nutcracker">
+          <p class="movie-name">The Nutcracker and The Four Realms</p>
+        </div>
+      </div>
+    </div>
+    <!-- most viewed end-->
+    <!-- nw release & active user start-->
+    <div class="col" style="padding: 11px;">
+      <div class="row">
+        <div class="col-md-12 new-release mt-1">
+          <div class="nwRelease">
+            <h2>
+              <span>NEW</span> RELEASE
+            </h2>
+            <!-- <a href="#">View More...</a>  -->
+          </div>
+          <div class="grid">
+            <div class="grid-item bg-yellow"></div>
+            <div class="grid-item bg-yellow"></div>
+            <div class="grid-item bg-yellow"></div>
+            <div class="grid-item bg-lt-gray"></div>
+            <div class="grid-item bg-lt-gray"></div>
+            <div class="grid-item bg-lt-gray"></div>
+            <div class="grid-item bg-gray"></div>
+            <div class="grid-item bg-gray"></div>
+            <div class="grid-item bg-gray"></div>
+          </div>
+        </div>
+        <br>
+        <div class="col-md-12 active-user mt-3">
+          <h2>
+            <span>ACTIVE</span> USER
+          </h2>
+          <div class="user-info">
+            <i class="fa fa-user user-icon"></i>
+            <p id="totalActive">Loading..</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- nw release & active user end-->
+  </div>
+  <!-- Dashboard end-->
+  </div>
+  <!-- main end-->
+  </div>
+  <script type="text/javascript" src="public/plugins/form-validator/jquery.form-validator.min.js"></script>
+  <script src="script/dash.js"></script>
+  <script src="script/counter.js"></script>

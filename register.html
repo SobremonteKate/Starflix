@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>StarFlix</title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="public/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/login.css">
+    <!-- FontAwsome Icons -->
+    <link rel="stylesheet" href="public/plugins/font-awesome/css/font-awesome.min.css" />
+    <!-- Page icon  -->
+    <link rel="icon" href="images/logo1.png">
+  </head>
+  <body>
+    <div class="container-fluid" style="margin-top:60px">
+      <div class="row" id="login-panel">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+          <div class="panel-primary" id="logins">
+            <div class="panel-heading" style="text-align:center; background-color: #ffff; border-color:#ffff;">
+              <h3 class="regis-head">Sign Up</h3>
+              <p class="regis-slogan">Effortless Speed at Your Fingertips.</p>
+            </div>
+            <form id="frmLogins" method="POST">
+              <div class="panel-body">
+                <div id="admin-msgs"></div>
+              </div>
+              <div class="row" style="margin-top: -20px;">
+                <div class="col-md-12">
+                  <div class="input-group uname">
+                    <input type="text" name="lname" id="lname" placeholder="Enter Last Name" required="required" class="form-control" data-validation-error-msg="Lastname is required" data-validation-error-msg-container="#usernamerror">
+                  </div>
+                  <div id="usernamerror"></div>
+                </div>
+                <div class="col-md-12">
+                  <div class="input-group uname">
+                    <input type="text" name="fname" id="fname" placeholder="Enter First Name" required="required" class="form-control" data-validation-error-msg="Firstname is required" data-validation-error-msg-container="#usernamerror">
+                  </div>
+                  <div id="usernamerror"></div>
+                </div>
+                <div class="col-md-12">
+                  <div class="input-group uname">
+                    <input type="email" name="email" id="email" placeholder="Enter Email" required="required" class="form-control" data-validation-error-msg="Email is required" data-validation-error-msg-container="#usernamerror">
+                  </div>
+                  <div id="usernamerror"></div>
+                </div>
+              </div>
+              <br>
+              <div class="row">
+                <div class="col-md-12" style="justify-content: center; align-items: center; width: 100%; display: flex;">
+                  <p class="passGuide"> Your password must have 8-20 characters
+                </div>
+                <div class="col-md-12">
+                  <div class="input-group ">
+                    <span class="input-group-addon" style="background-color: #f4f2f2;
+                                                border-color: #f4f2f2;
+                                                border-radius: 5px 0px 0px 5px;">
+                      <i class="fa
+                                                fa-lock"></i>
+                    </span>
+                    <input type="password" name="password" id="password" class="form-control password-regis" placeholder="Enter Password" required minlength="8" required="required" data-validation-length="min8" data-validation-error-msg-length="Atleast 8 characters is required" data-validation-error-msg-container="#passworderror">
+                  </div>
+                  <div id="passworderror"></div>
+                </div>
+                <div class="col-md-12">
+                  <div class="input-group ">
+                    <span class="input-group-addon" style="background-color: #f4f2f2;
+                                                border-color: #f4f2f2;
+                                                border-radius: 5px 0px 0px 5px;">
+                      <i class="fa
+                                                fa-lock"></i>
+                    </span>
+                    <input type="password" name="confirmpassword" id="confirmpassword" class="form-control password-regis" placeholder="Confirm Password" required="required" minlength="8">
+                  </div>
+                  <div id="passworderror"></div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="input-group-text">
+                    <input type="checkbox" id="showPassword" onclick="togglePasswordVisibility()">
+                    <label for="showPassword" class="m-0">Show Password</label>
+                  </div>
+                </div>
+              </div>
+              <br>
+              <div class="row">
+                <div class="col-md-12 btnRegis">
+                  <input type="hidden" name="action" value="isSignUp">
+                  <button type="submit" class="btn btn-primary regisBtn" id="btnLogin"> Create an Account </button>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12" style="justify-content: center; text-align: center;">
+                  <p class="haveAcc" style="color: #100f0d; font-weight: 400;   font-family: Montserrat, sans-serif;">Already have an account? <a href="login.html" style="font-weight: 500; color: #38b6ff; text-decoration: underline;">Sign in</a>
+                  </p>
+                </div>
+              </div>
+              <br>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    </div>
+    <script src="public/plugins/jquery/jquery-1.9.1.min.js"></script>
+    <script src="public/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="public/plugins/viewport/ie10-viewport-bug-workaround.js"></script>
+    <script src="public/plugins/jquery-blockui/jquery.blockUI.js"></script>
+    <script type="text/javascript" src="public/plugins/form-validator/jquery.form-validator.min.js"></script>
+    <script src="script/dash.js"></script>
+    <script src="script/registeredstudent.js"></script>
+    <!--js connection-->
+    <script type="text/javascript">
+      function togglePasswordVisibility() {
+        const passwordField = document.getElementById("password");
+        const cpasswordField = document.getElementById("confirmpassword");
+        const showPasswordCheckbox = document.getElementById("showPassword");
+        passwordField.type = showPasswordCheckbox.checked ? "text" : "password";
+        cpasswordField.type = showPasswordCheckbox.checked ? "text" : "password";
+      }
+      $(document).ready(function() {
+        handleFormEvents();
+        Dashboard.init();
+      });
+    </script>
+  </body>
+</html>

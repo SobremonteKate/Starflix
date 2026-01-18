@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>StarFlix</title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="public/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/login.css">
+    <!-- FontAwsome Icons -->
+    <link rel="stylesheet" href="public/plugins/font-awesome/css/font-awesome.min.css" />
+    <!-- Page icon  -->
+    <link rel="icon" href="images/logo1.png">
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row" id="login-panel">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+          <div class="panel-primary" id="login">
+            <div class="panel-heading" style="text-align:center">
+              <b class="sign">SIGN IN</b>
+              <p class="slogan">Lights. Camera. Subscribe.</p>
+            </div>
+            <form id="frmLogin" method="POST">
+              <div class="panel-body">
+                <div id="admin-msg"></div>
+                <div class="row" style="margin-top: -10px; margin-bottom: -8px;">
+                  <div class="col-md-12">
+                    <img src="images/logo.png" id="loginavatar" style="width:200px;height:200px;display: block;margin: 0 auto;border: 0 px solid;border-radius:100%; object-fit: cover;" class="img-circle img-responsive">
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="input-group">
+                      <span class="input-group-addon">
+                        <i class="fa
+                                                fa-user"></i>
+                      </span>
+                      <input type="text" name="email" id="email" placeholder="Enter Email" required="required" class="form-control" data-validation-error-msg="Email is required" data-validation-error-msg-container="#usernamerror" pattern=".*@.*" oninput="validateEmail()" />
+                    </div>
+                    <div id="usernamerror"></div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="input-group">
+                      <span class="input-group-addon">
+                        <i class="fa
+                                                fa-lock"></i>
+                      </span>
+                      <input type="password" name="password" id="password" class="form-control" placeholder="Enter Password" required="required" data-validation-error-msg-container="#passworderror">
+                    </div>
+                    <div id="passworderror"></div>
+                    <div class="input-group-text">
+                      <input type="checkbox" id="showPassword" onclick="togglePasswordVisibility()">
+                      <label for="showPassword" class="m-0">Show Password</label>
+                    </div>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-md-12" style="align-items: center; justify-content: center; display: flex;">
+                    <input type="hidden" name="action" value="isLogin">
+                    <button type="submit" class="btn btn-primary" id="btnLogin"> LOG IN </button>
+                  </div>
+                  <p class="forgotPass" style=" text-align: center;
+                                        align-items: center;
+                                        justify-content: center;">
+                    <a href="">Forgot Password?</a>
+                  </p>
+                  <div>
+                    <p class="Regis" style=" text-align: center;
+                                           align-items: center;
+                                           justify-content: center;">No account yet? <a href="register.html" style="font-weight: 500; color: #38b6ff; ">Register Now!</a>
+                    </p>
+                  </div>
+                </div>
+                <br>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--jquery-->
+    <script src="public/plugins/jquery/jquery-1.9.1.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script src="public/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <!--IE10 viewport hack for Surface/desktop Windows 8 bug-->
+    <script src="public/plugins/viewport/ie10-viewport-bug-workaround.js"></script>
+    <!--Block UI-->
+    <script src="public/plugins/jquery-blockui/jquery.blockUI.js"></script>
+    <!--form-validator-->
+    <script type="text/javascript" src="public/plugins/form-validator/jquery.form-validator.min.js"></script>
+    <!--js connection-->
+    <script src="script/login.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        Login.init();
+      });
+
+      function togglePasswordVisibility() {
+        const passwordField = document.getElementById("password");
+        const showPasswordCheckbox = document.getElementById("showPassword");
+        passwordField.type = showPasswordCheckbox.checked ? "text" : "password";
+      }
+
+      function validateEmail() {
+        const emailField = document.getElementById('email');
+        const errorMessage = document.getElementById('usernamerror');
+        if (!emailField.value.includes('@')) {
+          errorMessage.textContent = "Email must contain an '@' symbol.";
+          emailField.setCustomValidity("Invalid email address");
+        } else {
+          errorMessage.textContent = "";
+          emailField.setCustomValidity("");
+        }
+      }
+    </script>
+  </body>
+</html>
