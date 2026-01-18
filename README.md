@@ -70,6 +70,7 @@ Admins access a dedicated dashboard with system analytics and management tools.
 ![Register Page](screenshots/signup.png)
 ![User Dashboard](screenshots/starflix-1.png)
 ![Admin Dashboard](screenshots/admin-1.png)
+```
 
 ---
 
