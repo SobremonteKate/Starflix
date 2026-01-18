@@ -1,5 +1,5 @@
 Starflix is a full-stack streaming platform prototype built with PHP, HTML, CSS, and JavaScript.
-It’s my first time creating a system with separate user and admin access, and I intentionally explored more complex methods instead of going straight to basic PHP CRUD — just to challenge myself and learn different approaches.
+It’s my first time creating a system with separate user and admin access, and I intentionally explored more complex methods instead of going straight to basic PHP CRUD, just to challenge myself and learn different approaches.
 
 This project simulates how a real streaming service might manage users, content, and analytics.
 
